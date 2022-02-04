@@ -6,73 +6,51 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/03 23:38:59 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/04 20:26:59 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	stack_init(t_stack *st, int ac)
+void	stack_init(t_stack *st, t_check *check)
 {
-
-	st->valid = 1;
-	st->size_a = ac - 1;
-	st->size_b = 0;
+	st->size_a = check->size;
+	st->size_b = check->size;
 	st->a = (int *)malloc((st->size_a) * sizeof(int));
 	st->b = (int *)malloc((st->size_a) * sizeof(int));
 }
 
-void	dup_checker(t_stack *st)
+void	check_init(t_check *check)
 {
-	size_t i;
-	size_t x;
-
-	i = 0;
-	x = 1;
-	while (i < st->size_a)
-	{
-		x = 1;
-		while ( i + x < st->size_a)
-		{
-			if (st->a[i] == st->a[i + x])
-			{
-				st->valid = 0;
-				return ;
-			}
-			x++;
-		}
-		i++;
-	}
+	check->checker = ft_strdup("");
+	check->error = 0;
+	check->size = 0;
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*st;
+	t_check	*check;
+	int		i;
+
+	check = malloc(sizeof(t_check));
 	st = malloc(sizeof(t_stack));
-	stack_init(st, ac);
-
-
-	int	i;
-
-	i = 0;
+	check_init(check);
+	stack_init(st, check);
 	if (ac > 1)
 	{
-		while (i < st->size_a)
+		i = 0;
+		while (i++ < ac - 1)
 		{
-			st->a[i] = super_atoi(av[st->size_a - i], st);
-			i++;
+			check->checker = ft_strjoin_check(check->checker, av[i], check);
+			check->checker = ft_strjoin_check(check->checker, " ", check);
 		}
 	}
-	dup_checker(st);
-	if (!st->valid)
-	{
-		ft_putstr("Invalid input, duplicate numbers!\n");
-		return (0);
-	}
 	i = 0;
-	while (i < st->size_a)
-		printf("%d\n", st->a[i++]);
+	printf("%d\n", check->error);
+	// while (i < st->size_a)
+		printf("%s\n", check->checker);
 
 	return (0);
 }
