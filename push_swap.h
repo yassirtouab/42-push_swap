@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/04 22:06:55 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/05 18:54:24 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_stack {
 	size_t	size_a;
@@ -30,15 +31,16 @@ typedef struct s_check {
 }				t_check;
 
 size_t		ft_strlen(const char *str);
-size_t		ft_delimiter(char c, char *charset);
-size_t		ft_wordcount(char *str, char *charset);
-char		**ft_split(char *str, char *charset);
+size_t		ft_delimiter(char c);
+size_t		ft_wordcount(char *str);
+char		**ft_split(char *str);
 char		*ft_strjoin_check(char const *s1, char const *s2, t_check *check);
-int			ft_isdigit_signs(const char *s);
+int			ft_isdigit_signs(const char *s, t_check *check);
 char		*ft_strdup(const char *str);
 int			super_atoi(const char *str, t_check *check);
 void		ft_putstr(char *str);
 void		dup_checker(t_stack *st, t_check *check);
+int			ft_isvalid_number(char *s, t_check *check);
 void		check_init(t_check *check);
 void		stack_init(t_stack *st, t_check *check);
 

@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:53:12 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/04 19:07:55 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/05 16:37:42 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,15 @@ void	ft_putstr(char *str)
 		write(1, str++, 1);
 }
 
-size_t	ft_delimiter(char c, char *charset)
+size_t	ft_delimiter(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
+		if (c == ' ')
 			return (1);
-		i++;
-	}
+
 	return (0);
 }
 
-size_t	ft_wordcount(char *str, char *charset)
+size_t	ft_wordcount(char *str)
 {
 	size_t	nb;
 	size_t	i;
@@ -51,38 +45,38 @@ size_t	ft_wordcount(char *str, char *charset)
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_delimiter(str[i], charset))
+		while (str[i] && ft_delimiter(str[i]))
 			i++;
-		if (str[i] && !ft_delimiter(str[i], charset))
+		if (str[i] && !ft_delimiter(str[i]))
 			nb++;
-		while (str[i] && !ft_delimiter(str[i], charset))
+		while (str[i] && !ft_delimiter(str[i]))
 			i++;
 	}
 	return (nb);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str)
 {
 	char	**ret;
 	size_t	wordc;
 	size_t	i;
 	size_t	x;
 
-	wordc = ft_wordcount(str, charset);
+	wordc = ft_wordcount(str);
 	ret = (char **)malloc((wordc + 1) * sizeof(char *));
 	if (!ret)
 		return (0);
 	i = 0;
 	while (i < wordc)
 	{
-		while (*str && ft_delimiter(*str, charset))
+		while (*str && ft_delimiter(*str))
 			str++;
 		x = 0;
-		while (str[x] && !ft_delimiter(str[x], charset))
+		while (str[x] && !ft_delimiter(str[x]))
 			x++;
 		ret[i] = (char *)malloc(x + 1);
 		x = 0;
-		while (*str && !ft_delimiter(*str, charset))
+		while (*str && !ft_delimiter(*str))
 			ret[i][x++] = *str++;
 		ret[i++][x] = 0;
 	}

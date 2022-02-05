@@ -6,13 +6,13 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:12:46 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/04 22:31:14 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/05 18:55:21 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_isdigit_signs(const char *s)
+int	ft_isdigit_signs(const char *s, t_check *check)
 {
 	size_t	i;
 
@@ -21,7 +21,10 @@ int	ft_isdigit_signs(const char *s)
 	{
 		if (!(s[i] >= '0' && s[i] <= '9')
 			&& !(s[i] == '-' || s[i] == '+' || s[i] == ' '))
+		{
+			check->error = 1;
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -55,7 +58,7 @@ char	*ft_strjoin_check(char const *s1, char const *s2, t_check *check)
 	a[1] = 0;
 	if (!s1 || !s2)
 		return (0);
-	if (!ft_strlen(s2) || !ft_isdigit_signs(s2))
+	if (!ft_strlen(s2) || !ft_isdigit_signs(s2, check))
 		check->error = 1;
 	a[2] = ft_strlen(s1);
 	a[3] = ft_strlen(s2);
