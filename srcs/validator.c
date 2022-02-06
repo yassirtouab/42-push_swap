@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:19:00 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 06:43:55 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 08:22:26 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,7 @@ void	dup_checker(t_stack *st, t_check *check)
 		while (i + x < st->size_a)
 		{
 			if (st->a[i] == st->a[i + x])
-			{
-				check->error = 0;
-				return ;
-			}
+				ft_error(check);
 			x++;
 		}
 		i++;

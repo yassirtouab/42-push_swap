@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 06:22:58 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 07:32:48 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void		stack_init(t_stack *st, t_check *check);
 int			ft_checker(char *argument, t_check *check);
 void		ft_joiner(int ac, char **av, t_stack *st, t_check *check);
 int			ft_error(t_check *check);
+void		ft_parser(t_stack *st, t_check *check);
 
 #endif
