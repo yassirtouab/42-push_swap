@@ -6,13 +6,11 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/04 19:38:05 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 05:33:36 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-
 
 int	super_atoi(const char *str, t_check *check)
 {
@@ -41,3 +39,24 @@ int	super_atoi(const char *str, t_check *check)
 	}
 	return (nb * sym);
 }
+
+void	ft_joiner(int ac, char **av, t_stack *st, t_check *check)
+{
+	int	i;
+
+	i = 0;
+	while (i++ < ac - 1)
+	{
+		check->joined = ft_strjoin(check->joined, av[i]);
+		check->joined = ft_strjoin(check->joined, " ");
+	}
+}
+
+
+// void	ft_parser(t_stack *st, t_check *check)
+// {
+// 	if (!check->error)
+// 	{
+
+// 	}
+// }

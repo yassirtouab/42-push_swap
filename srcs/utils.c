@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:53:12 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/05 16:37:42 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 04:11:01 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void	ft_putstr(char *str)
 
 size_t	ft_delimiter(char c)
 {
-		if (c == ' ')
-			return (1);
-
+	if (c == ' ')
+		return (1);
 	return (0);
 }
 

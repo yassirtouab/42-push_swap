@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/05 18:55:54 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 05:35:26 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,18 @@ void	stack_init(t_stack *st, t_check *check)
 
 void	check_init(t_check *check)
 {
-	check->checker = ft_strdup("");
+	check->joined = ft_strdup("");
 	check->error = 0;
 	check->size = 0;
 }
+
+
 
 int	main(int ac, char **av)
 {
 	t_stack	*st;
 	t_check	*check;
 	int		i;
-	char 	**parsed;
 
 	check = malloc(sizeof(t_check));
 	st = malloc(sizeof(t_stack));
@@ -41,20 +42,12 @@ int	main(int ac, char **av)
 	if (ac > 1)
 	{
 		i = 0;
-		while (i++ < ac - 1 && ft_isdigit_signs(av[i], check))
-		{
-			check->checker = ft_strjoin_check(check->checker, av[i], check);
-			check->checker = ft_strjoin_check(check->checker, " ", check);
-		}
+		while (i++ < ac - 1)
+			printf("Check |%s| |%d|\n", av[i], ft_checker(av[i], check));
 	}
-	parsed = ft_split(check->checker);
 
-	i = -1;
-
-	printf("%s\n", check->checker);
-	while (parsed[++i])
-		printf("%s valid: %d\n", parsed[i], ft_isvalid_number(parsed[i], check));
+	ft_joiner(ac, av, st, check);
+	printf("Joined: |%s|\n", check->joined);
 	printf("There is %d error\n", check->error);
-
 	return (0);
 }
