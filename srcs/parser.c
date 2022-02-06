@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 22:45:48 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/07 01:04:05 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,10 @@ int	super_atoi(const char *str, t_check *check, t_stack *st)
 			sym = -1;
 		i++;
 	}
-	while (ft_isdigit(str[i]))
-	{
-		if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
-			check->error = 1;
-		printf("reached here\n");
+	while (str[i] >= '0' && str[i] <= '9')
 		nb = nb * 10 + str[i++] - 48;
-	}
+	if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
+		ft_error(check, st);
 	return (nb * sym);
 }
 
@@ -64,7 +61,7 @@ void	ft_parser(t_stack *st, t_check *check)
 		check->splited = ft_split(check->joined);
 		while (check->splited[i] && !check->error)
 		{
-			if (check->error)
+			if (!check->error)
 				super_atoi(check->splited[i], check, st);
 			else
 				ft_error(check, st);
