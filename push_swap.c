@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 08:22:08 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 22:42:26 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ int	main(int ac, char **av)
 	{
 		i = 0;
 		while (i++ < ac - 1)
-			printf("arg:|%s| valid:|%d|\n", av[i], ft_checker(av[i], check));
+			printf("arg:|%s| valid:|%d|\n", av[i], ft_validator(av[i], check, st));
 		ft_joiner(ac, av, st, check);
 		ft_parser(st, check);
 	}
 	i = 0;
-	while (i < st->size_a)
+	while (i < st->size_a && !check->error)
 		printf("stack: %d\n", st->a[i++]);
 	printf("size_a: %zu\n", st->size_a);
 	printf("size_a: %zu\n", st->size_b);

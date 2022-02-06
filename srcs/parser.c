@@ -6,13 +6,13 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 08:26:29 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/06 22:45:48 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	super_atoi(const char *str, t_check *check)
+int	super_atoi(const char *str, t_check *check, t_stack *st)
 {
 	int		i;
 	int		sym;
@@ -30,10 +30,13 @@ int	super_atoi(const char *str, t_check *check)
 			sym = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
+	{
+		if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
+			check->error = 1;
+		printf("reached here\n");
 		nb = nb * 10 + str[i++] - 48;
-	if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
-		return (ft_error(check));
+	}
 	return (nb * sym);
 }
 
@@ -61,13 +64,21 @@ void	ft_parser(t_stack *st, t_check *check)
 		check->splited = ft_split(check->joined);
 		while (check->splited[i] && !check->error)
 		{
-			super_atoi(check->splited[i], check);
+			if (check->error)
+				super_atoi(check->splited[i], check, st);
+			else
+				ft_error(check, st);
 			i++;
+		}
+		if (check->error)
+		{
+			printf("we fixed it\n");
+			ft_error(check, st);
 		}
 		check->size = i;
 		stack_init(st, check);
 		while (i--)
-			st->a[x++] = super_atoi(check->splited[i], check);
+			st->a[x++] = super_atoi(check->splited[i], check, st);
 		dup_checker(st, check);
 	}
 }
