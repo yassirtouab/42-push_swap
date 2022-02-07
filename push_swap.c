@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/07 01:05:49 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/07 22:14:50 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,30 @@ int	main(int ac, char **av)
 		ft_joiner(ac, av, st, check);
 		ft_parser(st, check);
 	}
-	i = 0;
-	while (i < st->size_a && !check->error)
-		printf("stack: %d\n", st->a[i++]);
+	i = st->size_a;
+	printf("TOP:\n\n");
+	while (--i >= 0 && !check->error)
+		printf("stack: %d\n", st->a[i]);
+	ft_pb(st);
+	ft_pb(st);
+	ft_pb(st);
+	printf("\nAfter op TOP:\n\n");
+	i = st->size_a;
+	while (--i >= 0 && !check->error)
+		printf("ope: %d\n", st->a[i]);
+
+	i = st->size_b;
+	printf("TOP:\n\n");
+	while (--i >= 0 && !check->error)
+		printf("stack: %d\n", st->b[i]);
+	ft_sb(st, 1);
+	printf("\nAfter op TOP:\n\n");
+	i = st->size_b;
+	while (--i >= 0 && !check->error)
+		printf("ope: %d\n", st->b[i]);
+
 	printf("size_a: %zu\n", st->size_a);
-	printf("size_a: %zu\n", st->size_b);
+	printf("size_b: %zu\n", st->size_b);
 	printf("there is error: %d\n", check->error);
 	ft_quit(check, st);
 	return (0);

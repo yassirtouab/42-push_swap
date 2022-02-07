@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/07 01:04:05 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/07 02:41:36 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,6 @@ void	ft_parser(t_stack *st, t_check *check)
 			else
 				ft_error(check, st);
 			i++;
-		}
-		if (check->error)
-		{
-			printf("we fixed it\n");
-			ft_error(check, st);
 		}
 		check->size = i;
 		stack_init(st, check);

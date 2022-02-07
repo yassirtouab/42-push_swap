@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 22:52:07 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/07 22:08:13 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,12 @@ void		ft_joiner(int ac, char **av, t_stack *st, t_check *check);
 int			ft_error(t_check *check, t_stack *st);
 void		ft_parser(t_stack *st, t_check *check);
 void		ft_quit(t_check *check, t_stack *st);
+
+void		ft_swap(int *a, int *b);
+void		ft_sa(t_stack *st, int pr);
+void		ft_sb(t_stack *st, int pr);
+void		ft_ss(t_stack *st);
+void		ft_pa(t_stack *st);
+void		ft_pb(t_stack *st);
 
 #endif
