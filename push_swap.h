@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/08 08:25:15 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/08 08:55:41 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void		ft_sb(t_stack *st, int pr);
 void		ft_ss(t_stack *st);
 void		ft_pa(t_stack *st);
 void		ft_pb(t_stack *st);
+void		ft_ra(t_stack *st, int pr);
 
 #endif

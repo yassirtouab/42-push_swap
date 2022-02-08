@@ -14,7 +14,7 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int swp;
+	int	swp;
 
 	swp = *a;
 	*a = *b;
@@ -23,12 +23,10 @@ void	ft_swap(int *a, int *b)
 
 void	ft_sa(t_stack *st, int pr)
 {
-	if  (st->size_a > 1)
+	if (st->size_a > 1)
 	{
 		ft_swap(&(st->a[st->size_a - 1]), &(st->a[st->size_a - 2]));
-		if  (pr)
+		if (pr)
 			ft_putstr("sa\n");
 	}
 }
-
-
