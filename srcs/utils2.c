@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:12:46 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 06:44:03 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/08 06:59:18 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strdup(const char *str)
 	return (ret);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*ret;
 	size_t	a[4];
@@ -60,5 +60,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (a[1] < a[3])
 		ret[a[0]++] = s2[a[1]++];
 	ret[a[0]] = 0;
+	free(s1);
 	return (ret);
 }

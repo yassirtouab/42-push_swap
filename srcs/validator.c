@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:19:00 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 22:55:11 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/08 07:16:51 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_error(t_check *check, t_stack *st)
 void	ft_quit(t_check *check, t_stack *st)
 {
 	free(check->joined);
+	while (check->size > 0)
+		free(check->splited[--check->size]);
 	free(check->splited);
 	free(st->a);
 	free(st->b);
@@ -53,13 +55,13 @@ void	ft_quit(t_check *check, t_stack *st)
 	exit(0);
 }
 
-int	ft_validator(char *argument, t_check *check, t_stack *st)
+void	ft_validator(char *argument, t_check *check, t_stack *st)
 {
 	size_t	i;
 
 	i = 0;
 	if (!ft_isdigit_signs(argument, check, st))
-		return (0);
+		ft_error(check, st);
 	while (argument[i])
 	{
 		while (argument[i] && argument[i] == ' ')
@@ -68,16 +70,15 @@ int	ft_validator(char *argument, t_check *check, t_stack *st)
 		{
 			i++;
 			if (!ft_isdigit(argument[i]))
-				return (ft_error(check, st));
+				ft_error(check, st);
 			while (argument[i] && ft_isdigit(argument[i]))
 				i++;
 		}
 		while (argument[i] && ft_isdigit(argument[i]))
 			i++;
 		if (argument[i] && (argument[i] == '-' || argument[i] == '+'))
-			return (ft_error(check, st));
+			ft_error(check, st);
 	}
-	return (1);
 }
 
 int	ft_isvalid_number(char *s, t_check *check, t_stack *st)

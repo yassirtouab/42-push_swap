@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:53:12 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/06 04:11:01 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/08 08:26:02 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_delimiter(char c)
 	return (0);
 }
 
-size_t	ft_wordcount(char *str)
+size_t	ft_wordcount(char *str, t_check *check)
 {
 	size_t	nb;
 	size_t	i;
@@ -51,17 +51,18 @@ size_t	ft_wordcount(char *str)
 		while (str[i] && !ft_delimiter(str[i]))
 			i++;
 	}
+	check->size = nb;
 	return (nb);
 }
 
-char	**ft_split(char *str)
+char	**ft_split(char *str, t_check *check)
 {
 	char	**ret;
 	size_t	wordc;
 	size_t	i;
 	size_t	x;
 
-	wordc = ft_wordcount(str);
+	wordc = ft_wordcount(str, check);
 	ret = (char **)malloc((wordc + 1) * sizeof(char *));
 	if (!ret)
 		return (0);

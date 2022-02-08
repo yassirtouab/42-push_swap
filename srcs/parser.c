@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/07 02:41:36 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/08 08:22:12 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_parser(t_stack *st, t_check *check)
 	x = 0;
 	if (!check->error)
 	{
-		check->splited = ft_split(check->joined);
+		check->splited = ft_split(check->joined, check);
 		while (check->splited[i] && !check->error)
 		{
 			if (!check->error)
