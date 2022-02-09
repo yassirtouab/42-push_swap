@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/08 09:09:52 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/09 14:57:30 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	printf("TOP:\n\n");
 	while (--i >= 0 && !check->error)
 		printf("stack: %d\n", st->a[i]);
-	ft_ra(st, 1);
+	ft_rr(st);
 	printf("\nAfter op TOP:\n\n");
 	i = st->size_a;
 	while (--i >= 0 && !check->error)
