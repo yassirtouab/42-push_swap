@@ -14,7 +14,7 @@
 
 void	ft_pb(t_stack *st)
 {
-	if  (st->size_a > 1)
+	if (st->size_a > 1)
 	{
 		st->b[st->size_b++] = st->a[--st->size_a];
 		ft_putstr("pb\n");

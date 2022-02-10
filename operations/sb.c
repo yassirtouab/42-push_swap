@@ -14,7 +14,7 @@
 
 void	ft_sb(t_stack *st, int pr)
 {
-	if  (st->size_b > 1)
+	if (st->size_b > 1)
 	{
 		ft_swap(&(st->b[st->size_b - 1]), &(st->b[st->size_b - 2]));
 		if (pr)
