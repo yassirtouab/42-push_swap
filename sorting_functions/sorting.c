@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/11 19:57:43 by ytouab           ###   ########.fr       */
+/*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
+/*   Updated: 2022/02/11 21:24:41 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_is_sorted(t_stack *st, t_check *check)
 {
-	t_stack	*st;
-	t_check	*check;
-	int		i;
+	int		sorted;
+	size_t	i;
 
-	check = malloc(sizeof(t_check));
-	st = malloc(sizeof(t_stack));
-	ft_init(st, check);
-	check_init(check);
-	if (ac > 1)
+	sorted = 1;
+	i = st->size_a;
+	if (st->size_a > 1)
 	{
-		i = 0;
-		while (i++ < ac - 1)
-			ft_validator(av[i], check, st);
-		ft_joiner(ac, av, st, check);
-		ft_parser(st, check);
+		while (--i && sorted)
+		{
+			if (st->a[i] > st->a[i - 1])
+			{
+				sorted = 0;
+				break ;
+			}
+		}
+		if (sorted)
+			ft_quit(check, st);
 	}
-	ft_is_sorted(st, check);
-	ft_quit(check, st);
-	return (0);
 }
