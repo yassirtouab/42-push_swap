@@ -27,7 +27,7 @@ void	ft_rra(t_stack *st, int pr)
 			i++;
 		}
 		i = 0;
-		 st->a[st->size_a - 1] = swp[0];
+		st->a[st->size_a - 1] = swp[0];
 		while (i < st->size_a - 1)
 		{
 			st->a[i] = swp[i + 1];
