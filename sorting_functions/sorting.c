@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 00:42:31 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/12 18:02:50 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,17 @@ void	ft_is_sorted(t_stack *st, t_check *check)
 
 void	ft_sort_small(t_stack *st, t_check *check)
 {
-	size_t	i;
-
-	i = st->size_a;
 	if (st->size_a == 2)
 		ft_sa(st, 1);
 	if (st->size_a == 3)
 	{
-		if ((st->a[2] > st->a[1]) && (st->a[0] > st->a[1+0 ]))
+		if (((st->a[2] > st->a[1]) && (st->a[0] > st->a[2]))
+			|| ((st->a[2] > st->a[1]) && (st->a[1] > st->a[0]))
+			|| ((st->a[2] < st->a[0]) && (st->a[1] > st->a[0])))
+			ft_sa(st, 1);
+		if ((st->a[2] < st->a[1]) && (st->a[0] < st->a[2]))
+			ft_rra(st, 1);
+		if ((st->a[2] > st->a[0]) && (st->a[1] < st->a[0]))
+			ft_ra(st, 1);
 	}
 }
