@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 15:57:11 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/12 18:42:23 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void		ft_rrb(t_stack *st, int pr);
 void		ft_rrr(t_stack *st);
 
 void		ft_is_sorted(t_stack *st, t_check *check);
-void		ft_sort_small(t_stack *st, t_check *check);
+void		ft_sort_small(t_stack *st);
 
 #endif

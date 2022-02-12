@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 16:15:13 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/12 18:42:39 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 		ft_parser(st, check);
 	}
 	ft_is_sorted(st, check);
-	ft_sort_small(st, check);
+	ft_sort_small(st);
 	i = st->size_a;
 	while (--i >= 0)
 		printf("stack: %d\n", st->a[i]);

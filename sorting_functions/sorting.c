@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 18:02:50 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/12 18:42:13 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_is_sorted(t_stack *st, t_check *check)
 	}
 }
 
-void	ft_sort_small(t_stack *st, t_check *check)
+void	ft_sort_small(t_stack *st)
 {
 	if (st->size_a == 2)
 		ft_sa(st, 1);
