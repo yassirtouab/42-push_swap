@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/08 12:56:21 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/13 03:51:31 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	super_atoi(const char *str, t_check *check, t_stack *st)
 	return (nb * sym);
 }
 
-void	ft_joiner(int ac, char **av, t_stack *st, t_check *check)
+void	ft_joiner(int ac, char **av, t_check *check)
 {
 	int	i;
 

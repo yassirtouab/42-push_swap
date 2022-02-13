@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 18:42:39 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/13 03:52:00 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 		i = 0;
 		while (i++ < ac - 1)
 			ft_validator(av[i], check, st);
-		ft_joiner(ac, av, st, check);
+		ft_joiner(ac, av, check);
 		ft_parser(st, check);
 	}
 	ft_is_sorted(st, check);

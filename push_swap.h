@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/12 18:42:23 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/13 03:51:41 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			ft_isvalid_number(char *s, t_check *check, t_stack *st);
 void		check_init(t_check *check);
 void		stack_init(t_stack *st, t_check *check);
 void		ft_validator(char *argument, t_check *check, t_stack *st);
-void		ft_joiner(int ac, char **av, t_stack *st, t_check *check);
+void		ft_joiner(int ac, char **av, t_check *check);
 void		ft_error(t_check *check, t_stack *st);
 void		ft_parser(t_stack *st, t_check *check);
 void		ft_quit(t_check *check, t_stack *st);
