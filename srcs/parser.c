@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:43:33 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/13 03:51:31 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/14 13:25:09 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ int	super_atoi(const char *str, t_check *check, t_stack *st)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		nb = nb * 10 + str[i++] - 48;
-	if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
-		ft_error(check, st);
+		if ((sym == -1 && nb > 2147483648) || (sym == 1 && nb > 2147483647))
+			ft_error(check, st);
+	}
 	return (nb * sym);
 }
 
