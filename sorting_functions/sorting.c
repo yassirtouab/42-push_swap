@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/15 19:45:43 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/16 07:20:31 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@ int	ft_is_sorted(t_stack *st)
 	return (0);
 }
 
+int	ft_find_smallest(t_stack *st)
+{
+	int		smallest;
+	size_t	i;
+
+	i = 0;
+	smallest = st->a[st->size_a - 1];
+	while (++i < st->size_a)
+	{
+		if (st->a[i] < smallest)
+			smallest = st->a[i];
+	}
+	return (smallest);
+}
+
 void	ft_sort_small(t_stack *st)
 {
 	if (st->size_a == 2)
@@ -54,21 +69,17 @@ void	ft_sort_small(t_stack *st)
 
 void	ft_sort_five(t_stack *st)
 {
-	if (!ft_is_sorted(st) && st->size_a < 6)
+	while (!ft_is_sorted(st) && st->size_a != 5)
 	{
-		if (st->size_a == 5)
-			ft_pb(st);
-		if (st->size_a == 4)
-			ft_pb(st);
 		if (st->size_a == 3)
 		{
 			ft_sort_small(st);
 			ft_pa(st);
+			ft_pa(st);
 		}
-		if (!ft_is_sorted(st))
+		if (ft_find_smallest(st) == st->a[st->size_a - 1])
+			ft_pb(st);
+		else
 			ft_ra(st, 1);
-		ft_pa(st);
-		if (!ft_is_sorted(st))
-			ft_rra(st, 1);
 	}
 }
