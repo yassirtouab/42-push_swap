@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/17 18:29:40 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 10:42:10 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ int	ft_find_smallest(t_stack *st)
 
 	i = 0;
 	smallest = st->a[st->size_a - 1];
-	while (++i < st->size_a)
+	while (i < st->size_a)
 	{
 		if (st->a[i] < smallest)
 			smallest = st->a[i];
+		i++;
 	}
 	return (smallest);
 }
@@ -73,11 +74,12 @@ void	ft_sort_four(t_stack *st)
 	{
 		while (!ft_is_sorted(st) || st->size_a != 4)
 		{
-			if (ft_find_smallest(st) == st->a[st->size_a - 1])
+			if (ft_find_smallest(st) == st->a[3] && st->size_a == 4)
 				ft_pb(st);
-			else if (ft_find_smallest(st) == st->a[st->size_a - 2])
+			else if (ft_find_smallest(st) == st->a[2])
 				ft_ra(st, 1);
-			else if (ft_find_smallest(st) == st->a[0] || ft_find_smallest(st) == st->a[1])
+			else if (ft_find_smallest(st) == st->a[0]
+				|| ft_find_smallest(st) == st->a[1])
 				ft_rra(st, 1);
 			if (st->size_a == 3)
 			{
@@ -85,7 +87,7 @@ void	ft_sort_four(t_stack *st)
 				ft_pa(st);
 			}
 			if (ft_is_sorted(st) && st->size_a == 4)
-				break;
+				break ;
 		}
 	}
 }
@@ -94,13 +96,15 @@ void	ft_sort_five(t_stack *st)
 {
 	if (st->size_a == 5)
 	{
-		while (!ft_is_sorted(st) || st->size_a != 5)
+		while (!ft_is_sorted(st) && st->size_a == 5)
 		{
-			if (ft_find_smallest(st) == st->a[st->size_a - 1] && st->size_a == 5)
+			if (ft_find_smallest(st) == st->a[4] && st->size_a == 5)
 				ft_pb(st);
-			else if (ft_find_smallest(st) == st->a[st->size_a - 2] || ft_find_smallest(st) == st->a[st->size_a - 3])
+			else if (ft_find_smallest(st) == st->a[3]
+				|| ft_find_smallest(st) == st->a[2])
 				ft_ra(st, 1);
-			else if (ft_find_smallest(st) == st->a[0] || ft_find_smallest(st) == st->a[1])
+			else if (ft_find_smallest(st) == st->a[0]
+				|| ft_find_smallest(st) == st->a[1])
 				ft_rra(st, 1);
 			if (st->size_a == 4)
 			{
@@ -108,7 +112,7 @@ void	ft_sort_five(t_stack *st)
 				ft_pa(st);
 			}
 			if (ft_is_sorted(st) && st->size_a == 5)
-				break;
+				break ;
 		}
 	}
 }

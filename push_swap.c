@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/17 20:57:25 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 01:17:13 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	main(int ac, char **av)
 		ft_parser(st, check);
 		if (ft_is_sorted(st))
 			ft_quit(check, st);
-		// ft_three_two(st);
-		// ft_sort_four(st);
+		ft_three_two(st);
+		ft_sort_four(st);
 		ft_sort_five(st);
 		i = st->size_a;
 		while (--i >= 0)
