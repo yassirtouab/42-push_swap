@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:53:12 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/08 08:26:02 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 11:43:15 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,17 @@ size_t	ft_strlen(const char *str)
 	return (l);
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	while (*str)
-		write(1, str++, 1);
+	size_t	i;
+	size_t	l;
+
+	i = 0;
+	if (!s)
+		return ;
+	l = ft_strlen(s);
+	while (i < l)
+		write(fd, &s[i++], 1);
 }
 
 size_t	ft_delimiter(char c)

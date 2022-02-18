@@ -16,5 +16,5 @@ void	ft_rr(t_stack *st)
 {
 	ft_ra(st, 0);
 	ft_rb(st, 0);
-	ft_putstr("rr\n");
+	ft_putstr_fd("rr\n", 1);
 }

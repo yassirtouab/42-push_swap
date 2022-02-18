@@ -32,6 +32,6 @@ void	ft_ra(t_stack *st, int pr)
 			st->a[i] = swp[i - 1];
 		free(swp);
 		if (pr)
-			ft_putstr("ra\n");
+			ft_putstr_fd("ra\n", 1);
 	}
 }

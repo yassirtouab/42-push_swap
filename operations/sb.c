@@ -18,6 +18,6 @@ void	ft_sb(t_stack *st, int pr)
 	{
 		ft_swap(&(st->b[st->size_b - 1]), &(st->b[st->size_b - 2]));
 		if (pr)
-			ft_putstr("sb\n");
+			ft_putstr_fd("sb\n", 1);
 	}
 }

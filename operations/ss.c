@@ -16,5 +16,5 @@ void	ft_ss(t_stack *st)
 {
 	ft_sa(st, 0);
 	ft_sb(st, 0);
-	ft_putstr("ss\n");
+	ft_putstr_fd("ss\n", 1);
 }

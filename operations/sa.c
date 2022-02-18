@@ -27,6 +27,6 @@ void	ft_sa(t_stack *st, int pr)
 	{
 		ft_swap(&(st->a[st->size_a - 1]), &(st->a[st->size_a - 2]));
 		if (pr)
-			ft_putstr("sa\n");
+			ft_putstr_fd("sa\n", 1);
 	}
 }

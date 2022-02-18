@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 21:17:07 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/10 21:18:06 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 11:41:23 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check_init(t_check *check)
 void	ft_error(t_check *check, t_stack *st)
 {
 	check->error = 1;
-	ft_putstr("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	ft_quit(check, st);
 }
 

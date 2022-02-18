@@ -17,6 +17,6 @@ void	ft_pa(t_stack *st)
 	if (st->size_b > 0)
 	{
 		st->a[st->size_a++] = st->b[--st->size_b];
-		ft_putstr("pa\n");
+		ft_putstr_fd("pa\n", 1);
 	}
 }

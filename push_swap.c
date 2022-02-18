@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/18 01:17:13 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 11:50:54 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ int	main(int ac, char **av)
 	t_check	*check;
 	int		i;
 
-	check = malloc(sizeof(t_check));
-	st = malloc(sizeof(t_stack));
-	ft_init(st, check);
-	check_init(check);
+
 	if (ac > 1)
 	{
+		check = malloc(sizeof(t_check));
+		st = malloc(sizeof(t_stack));
+		ft_init(st, check);
+		check_init(check);
 		i = 0;
 		while (i++ < ac - 1)
 			ft_validator(av[i], check, st);
@@ -34,16 +35,17 @@ int	main(int ac, char **av)
 		ft_three_two(st);
 		ft_sort_four(st);
 		ft_sort_five(st);
-		i = st->size_a;
-		while (--i >= 0)
-			printf("stack a: %d\n", st->a[i]);
-		printf("\n\n");
-		i = st->size_b;
-		while (--i >= 0)
-			printf("stack b: %d\n", st->b[i]);
-		printf("size a: %zu\n", st->size_a);
-		printf("size b: %zu\n", st->size_b);
-		printf("Smallest: %d\n", ft_find_smallest(st));
+		// i = st->size_a;
+		// while (--i >= 0)
+		// 	printf("stack a: %d\n", st->a[i]);
+		// printf("\n\n");
+		// i = st->size_b;
+		// while (--i >= 0)
+		// 	printf("stack b: %d\n", st->b[i]);
+		// printf("size a: %zu\n", st->size_a);
+		// printf("size b: %zu\n", st->size_b);
+		// printf("Smallest: %d\n", ft_find_smallest(st));
+		ft_quit(check, st);
 	}
 	return (0);
 }

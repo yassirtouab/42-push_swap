@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/17 16:30:55 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/18 11:34:43 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		*ft_strjoin(char *s1, char *s2);
 int			ft_isdigit_signs(const char *s, t_check *check, t_stack *st);
 char		*ft_strdup(const char *str);
 int			super_atoi(const char *str, t_check *check, t_stack *st);
-void		ft_putstr(char *str);
+void		ft_putstr_fd(char *s, int fd);
 void		dup_checker(t_stack *st, t_check *check);
 int			ft_isvalid_number(char *s, t_check *check, t_stack *st);
 void		check_init(t_check *check);

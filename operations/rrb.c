@@ -35,6 +35,6 @@ void	ft_rrb(t_stack *st, int pr)
 		}
 		free(swp);
 		if (pr)
-			ft_putstr("rrb\n");
+			ft_putstr_fd("rrb\n", 1);
 	}
 }
