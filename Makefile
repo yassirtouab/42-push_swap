@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 02:02:31 by ytouab            #+#    #+#              #
-#    Updated: 2022/02/19 17:17:46 by ytouab           ###   ########.fr        #
+#    Updated: 2022/02/19 19:07:49 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,17 @@ NAME 		= push_swap
 
 OBJS		= ${SRC:.c=.o}
 
-DEFAULT		=	"\033[0m"
+WHITE		=	"\033[0m"
 RED			=	"\033[0;31m"
 GREEN		=	"\033[1;32m"
 YELLOW		=	"\033[0;33m"
 
-RM			= rm -f
+RM			=	rm -f
 
-GCCF		= gcc -Wall -Wextra -Werror
+GCCF		=	gcc -Wall -Wextra -Werror
 
-SF			= sorting_functions/sorting.c
+SF			=	sorting_functions/sorting.c \
+				sorting_functions/sorting_utils.c
 
 OP			=	operations/pa.c \
 				operations/pb.c \
@@ -65,11 +66,11 @@ all:	${NAME}
 
 clean:
 		@${RM} ${OBJS}
-		@echo ${RED}"Object Files Deleted ✅"
+		@echo ${RED}"Object Files Deleted ✅"${WHITE}
 
 fclean:	clean
 		@${RM} ${NAME}
-		@echo ${RED}"Executable File Deleted ✅"
+		@echo ${RED}"Executable File Deleted ✅"${WHITE}
 
 re:		fclean all
 
