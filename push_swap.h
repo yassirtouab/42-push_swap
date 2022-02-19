@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/19 16:22:26 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/19 23:39:12 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ typedef struct s_check {
 	char	**splited;
 	size_t	size;
 }				t_check;
+
+typedef struct s_sort {
+	int	*s;
+	int	sn;
+}				t_sort;
 
 void		ft_init(t_stack *st, t_check *check);
 size_t		ft_strlen(const char *str);
@@ -75,4 +80,8 @@ void		ft_sort_four(t_stack *st);
 void		ft_sort_ten(t_stack *st);
 size_t		ft_get_index(t_stack *st, int num);
 void		ft_best_move(t_stack *st, int num);
+void		ft_sort_big(t_stack *st);
+void		ft_sorted_init(t_stack *st, t_sort *sr, int n);
+void		ft_sort_s(t_stack *st, t_sort *sr);
+int			ft_closest_chunk(t_stack *st, t_sort *sr);
 #endif

@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 02:02:31 by ytouab            #+#    #+#              #
-#    Updated: 2022/02/19 19:07:49 by ytouab           ###   ########.fr        #
+#    Updated: 2022/02/19 20:56:28 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ RM			=	rm -f
 GCCF		=	gcc -Wall -Wextra -Werror
 
 SF			=	sorting_functions/sorting.c \
-				sorting_functions/sorting_utils.c
+				sorting_functions/sorting_utils.c \
+				sorting_functions/sorting_utils2.c
 
 OP			=	operations/pa.c \
 				operations/pb.c \
