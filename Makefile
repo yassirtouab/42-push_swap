@@ -6,14 +6,18 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 02:02:31 by ytouab            #+#    #+#              #
-#    Updated: 2022/02/19 15:09:39 by ytouab           ###   ########.fr        #
+#    Updated: 2022/02/19 17:17:46 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME 		= push_swap
 
-OBJS	= ${SRC:.c=.o}
+OBJS		= ${SRC:.c=.o}
 
+DEFAULT		=	"\033[0m"
+RED			=	"\033[0;31m"
+GREEN		=	"\033[1;32m"
+YELLOW		=	"\033[0;33m"
 
 RM			= rm -f
 
@@ -21,7 +25,7 @@ GCCF		= gcc -Wall -Wextra -Werror
 
 SF			= sorting_functions/sorting.c
 
-OP		=		operations/pa.c \
+OP			=	operations/pa.c \
 				operations/pb.c \
 				operations/ra.c \
 				operations/rb.c \
@@ -40,10 +44,10 @@ SRCS		=	srcs/helper_functions.c \
 				srcs/validator.c \
 
 
-SRC		=	push_swap.c \
-			${OP} \
-			${SF} \
-			${SRCS} \
+SRC			=	push_swap.c \
+				${OP} \
+				${SF} \
+				${SRCS} \
 
 
 
@@ -53,6 +57,7 @@ SRC		=	push_swap.c \
 
 $(NAME):	${OBJS}
 		@${GCCF} ${OBJS} -o ${NAME}
+		@echo ${GREEN}"Compilation Done ✅"
 
 
 
@@ -60,8 +65,11 @@ all:	${NAME}
 
 clean:
 		@${RM} ${OBJS}
+		@echo ${RED}"Object Files Deleted ✅"
 
 fclean:	clean
 		@${RM} ${NAME}
+		@echo ${RED}"Executable File Deleted ✅"
 
 re:		fclean all
+

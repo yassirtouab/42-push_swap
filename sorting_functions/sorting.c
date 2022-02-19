@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/19 15:44:00 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/19 16:30:45 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,45 @@ void	ft_sort_four(t_stack *st)
 	}
 }
 
+void	ft_sort_five(t_stack *st)
+{
+	if (st->size_a == 5)
+	{
+		while (!ft_is_sorted(st) && st->size_a == 5)
+		{
+			if (ft_find_smallest(st) == st->a[4] && st->size_a == 5)
+				ft_pb(st);
+			else
+				ft_best_move(st, ft_find_smallest(st));
+			if (st->size_a == 4)
+			{
+				ft_sort_four(st);
+				ft_pa(st);
+			}
+			if (ft_is_sorted(st) && st->size_a == 5)
+				break ;
+		}
+	}
+}
+
+void	ft_sort_ten(t_stack *st)
+{
+		if (st->size_a <= 10)
+	{
+		while (!ft_is_sorted(st) || st->size_a != 5)
+		{
+			if (ft_find_smallest(st) == st->a[st->size_a - 1])
+				ft_pb(st);
+			else
+				ft_best_move(st, ft_find_smallest(st));
+			if (ft_is_sorted(st))
+				break ;
+		}
+		while (st->size_b)
+			ft_pa(st);
+	}
+}
+
 size_t	ft_get_index(t_stack *st, int num)
 {
 	size_t	index;
@@ -114,25 +153,4 @@ void	ft_best_move(t_stack *st, int num)
 		ft_ra(st, 1);
 	else
 		ft_rra(st, 1);
-}
-
-void	ft_sort_five(t_stack *st)
-{
-	if (st->size_a == 5)
-	{
-		while (!ft_is_sorted(st) && st->size_a == 5)
-		{
-			if (ft_find_smallest(st) == st->a[4] && st->size_a == 5)
-				ft_pb(st);
-			else
-				ft_best_move(st, ft_find_smallest(st));
-			if (st->size_a == 4)
-			{
-				ft_sort_four(st);
-				ft_pa(st);
-			}
-			if (ft_is_sorted(st) && st->size_a == 5)
-				break ;
-		}
-	}
 }

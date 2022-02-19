@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/19 15:18:57 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/19 16:28:30 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,16 @@ int	main(int ac, char **av)
 		ft_three_two(st);
 		ft_sort_four(st);
 		ft_sort_five(st);
-		// i = st->size_a;
-		// while (--i >= 0)
-		// 	printf("stack a: %d\n", st->a[i]);
-		// printf("\n\n");
-		// i = st->size_b;
-		// while (--i >= 0)
-		// 	printf("stack b: %d\n", st->b[i]);
-		// printf("size a: %zu\n", st->size_a);
-		// printf("size b: %zu\n", st->size_b);
+		ft_sort_ten(st);
+		i = st->size_a;
+		while (--i >= 0)
+			printf("stack a: %d\n", st->a[i]);
+		printf("\n\n");
+		i = st->size_b;
+		while (--i >= 0)
+			printf("stack b: %d\n", st->b[i]);
+		printf("size a: %zu\n", st->size_a);
+		printf("size b: %zu\n", st->size_b);
 		// printf("Smallest: %d\n", ft_find_smallest(st));
 
 		ft_quit(check, st);
