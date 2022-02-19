@@ -7,9 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "*/*.c",
+				"*.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "push_swap"
             ],
             "options": {
                 "cwd": "${fileDirname}"

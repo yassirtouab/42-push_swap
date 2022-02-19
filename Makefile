@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 02:02:31 by ytouab            #+#    #+#              #
-#    Updated: 2022/02/16 06:59:40 by ytouab           ###   ########.fr        #
+#    Updated: 2022/02/19 15:09:39 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,20 +48,20 @@ SRC		=	push_swap.c \
 
 
 .c.o:
-		${GCCF} -c $< -o ${<:.c=.o}
+		@${GCCF} -c $< -o ${<:.c=.o}
 
 
 $(NAME):	${OBJS}
-		${GCCF} ${OBJS} -o ${NAME}
+		@${GCCF} ${OBJS} -o ${NAME}
 
 
 
 all:	${NAME}
 
 clean:
-		${RM} ${OBJS}
+		@${RM} ${OBJS}
 
 fclean:	clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
 
 re:		fclean all
