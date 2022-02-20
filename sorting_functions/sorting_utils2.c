@@ -24,7 +24,11 @@ void	ft_sorted_init(t_stack *st, t_sort *sr, int n)
 		i++;
 	}
 	ft_sort_s(st, sr);
-	sr->sn = sr->s[st->size_a / n];
+	if  (!n)
+		sr->sn = sr->s[(st->size_a) - 1];
+	else
+		sr->sn = sr->s[(st->size_a / n) - 1];
+	printf("Key number: %d\n", sr->sn);
 }
 
 void	ft_sort_s(t_stack *st, t_sort *sr)

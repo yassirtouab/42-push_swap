@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:23:44 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/19 23:39:12 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/20 16:42:28 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,10 @@ void		ft_sort_big(t_stack *st);
 void		ft_sorted_init(t_stack *st, t_sort *sr, int n);
 void		ft_sort_s(t_stack *st, t_sort *sr);
 int			ft_closest_chunk(t_stack *st, t_sort *sr);
+int			ft_in_chunk(t_stack *st, t_sort *sr);
+
+void		ft_best_move_b(t_stack *st, int num);
+size_t		ft_get_index_b(t_stack *st, int num);
+int			ft_find_biggest(t_stack *st);
+void		ft_pushback_b(t_stack *st);
 #endif
