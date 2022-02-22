@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:00:11 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/21 10:32:25 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/22 06:05:57 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,13 @@ void	ft_sort_big(t_stack *st)
 	t_sort	*sr;
 	int		n;
 
-	n = 4;
-	sr = malloc(sizeof(t_sort));
+	n = 5;
+	sr = (t_sort *)malloc(sizeof(t_sort));
 	if (st->size_a > 10)
 	{
 		if (st->size_a > 100)
-			n = 11;
-		while (n)
+			n = 12;
+		while (--n)
 		{
 			ft_sorted_init(st, sr, n);
 			while (st->size_a)
@@ -110,7 +110,6 @@ void	ft_sort_big(t_stack *st)
 				if (!ft_in_chunk(st, sr))
 					break ;
 			}
-			n--;
 		}
 		ft_pushback_b(st);
 	}

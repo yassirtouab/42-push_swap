@@ -6,18 +6,33 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 02:26:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/02/21 10:15:25 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/02/22 07:41:32 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_sorter(t_stack *st, t_check *check)
+{
+	if (ft_is_sorted(st) || st->size_a == 1)
+		ft_quit(check, st);
+	else if (st->size_a <= 3)
+		ft_three_two(st);
+	else if (st->size_a == 4)
+		ft_sort_four(st);
+	else if (st->size_a == 5)
+		ft_sort_five(st);
+	else if (st->size_a <= 10)
+		ft_sort_ten(st);
+	else if (st->size_a > 10)
+		ft_sort_big(st);
+}
 
 int	main(int ac, char **av)
 {
 	t_stack	*st;
 	t_check	*check;
 	int		i;
-
 
 	if (ac > 1)
 	{
@@ -30,27 +45,7 @@ int	main(int ac, char **av)
 			ft_validator(av[i], check, st);
 		ft_joiner(ac, av, check);
 		ft_parser(st, check);
-		if (ft_is_sorted(st) || st->size_a == 1)
-		{
-			ft_quit(check, st);
-			return (0);
-		}
-
-		ft_three_two(st);
-		ft_sort_four(st);
-		ft_sort_five(st);
-		ft_sort_ten(st);
-		ft_sort_big(st);
-		// i = st->size_a;
-		// while (--i >= 0)
-		// 	printf("stack a: %d\n", st->a[i]);
-		// printf("\n\n");
-		// i = st->size_b;
-		// while (--i >= 0)
-		// 	printf("stack b: %d\n", st->b[i]);
-		// printf("size a: %zu\n", st->size_a);
-		// printf("size b: %zu\n", st->size_b);
-		// printf("Smallest: %d\n", ft_find_smallest(st));
+		ft_sorter(st, check);
 		ft_quit(check, st);
 	}
 	return (0);
