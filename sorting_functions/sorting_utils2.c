@@ -17,7 +17,7 @@ void	ft_sorted_init(t_stack *st, t_sort *sr, int n)
 	size_t	i;
 
 	i = 0;
-	sr->s = (int *)malloc(st->size_a * sizeof(int));
+	sr->s = (int *)malloc((st->size_a) * sizeof(int));
 	while (i < st->size_a)
 	{
 		sr->s[i] = st->a[i];
